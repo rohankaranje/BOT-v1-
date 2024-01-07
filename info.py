@@ -31,7 +31,7 @@ ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002025950344').split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '6343583875').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
-auth_channel = environ.get('AUTH_CHANNEL')
+auth_channel = environ.get('AUTH_CHANNEL', "https://t.me/+d_5w_znKqJQzMDNl")
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
@@ -48,11 +48,11 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'AniDb')
 
 # Others
 IS_VERIFY = is_enabled((environ.get('IS_VERIFY', 'True')), True)
-HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', "https://t.me/c/1845700490/3")
-VERIFY2_URL = environ.get('VERIFY2_URL', "ez4short.com")
-VERIFY2_API = environ.get('VERIFY2_API', "41149ef8d5696ea7318485ba39b9224f52b7bdd8")
-SHORTLINK_URL = environ.get('SHORTLINK_URL', 'ez4short.com')
-SHORTLINK_API = environ.get('SHORTLINK_API', '41149ef8d5696ea7318485ba39b9224f52b7bdd8')
+HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', "https://t.me/How_to_Downloanload")
+VERIFY2_URL = environ.get('VERIFY2_URL', "urlshortx.com")
+VERIFY2_API = environ.get('VERIFY2_API', "286845832765b956cc4faccbd712adc3d99bc2ec")
+SHORTLINK_URL = environ.get('SHORTLINK_URL', 'urlshortx.com')
+SHORTLINK_API = environ.get('SHORTLINK_API', '286845832765b956cc4faccbd712adc3d99bc2ec')
 IS_SHORTLINK = is_enabled((environ.get('IS_SHORTLINK', 'False')), False)
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 MAX_B_TN = environ.get("MAX_B_TN", "5")
