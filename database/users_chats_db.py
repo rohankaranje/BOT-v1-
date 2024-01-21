@@ -137,6 +137,7 @@ class Database:
             'shortlink': SHORTLINK_URL,
             'shortlink_api': SHORTLINK_API,
             'is_shortlink': IS_SHORTLINK
+            botpm
         }
         chat = await self.grp.find_one({'id':int(id)})
         if chat:
